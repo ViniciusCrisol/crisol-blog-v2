@@ -4,6 +4,7 @@ export default createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
+    outline: none;
     box-sizing: border-box;
   }
 
@@ -13,9 +14,8 @@ export default createGlobalStyle`
     background-color: ${({ theme }) => theme.colors.background};
   }
 
-
-  *, input, button {
-    font-family: Roboto, sans-serif;
+  *, input, button, pre {
+    font-family: 'Open Sans', sans-serif;
     color: ${({ theme }) => theme.colors.text};
   }
 `;
