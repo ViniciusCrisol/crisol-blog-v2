@@ -6,6 +6,7 @@ const theme = {
     secondary: '#95E1D3',
     tertiary: '#FCE38A',
   },
+  boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.15);',
 };
 
 export default theme;

@@ -17,19 +17,20 @@ export const Top = styled.div`
     width: 100%;
     height: 100%;
 
+    margin: 0 auto;
+    padding: 0 10px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    margin: 0 auto;
 
     .links {
       display: flex;
       align-items: center;
 
       a {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
 
         border-radius: 4px;
         background: ${({ theme }) => theme.colors.secondary};
