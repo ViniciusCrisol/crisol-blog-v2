@@ -28,7 +28,9 @@ const Home: React.FC<IPosts> = ({ posts }) => {
         <Posts>
           {posts.map(post => (
             <Post color={post.node.color}>
-              <div className="top-side"></div>
+              <div className="top-side">
+                <h4>{post.node.title}</h4>
+              </div>
               <div className="bottom-side"></div>
             </Post>
           ))}

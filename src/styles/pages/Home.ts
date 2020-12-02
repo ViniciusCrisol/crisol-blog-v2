@@ -26,25 +26,31 @@ export const Posts = styled.div`
   margin-top: 30px;
 
   display: grid;
-  grid-gap: 15px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
 `;
 
 export const Post = styled.div<IPost>`
-  width: 180px;
+  width: 277px;
   height: 200px;
 
   box-shadow: ${({ theme }) => theme.boxShadow};
 
   .top-side {
     width: 100%;
-    height: 140px;
+    height: 160px;
+
+    padding: 15px;
     background: ${({ color }) => color};
+
+    h4 {
+      color: #fff;
+    }
   }
 
   .bottom-side {
     width: 100%;
-    height: 60px;
+    height: 40px;
 
     background: #fff;
   }
