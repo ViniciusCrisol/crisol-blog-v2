@@ -6,9 +6,9 @@ import { fetchAPI } from '../lib/api-prismic';
 import { getPosts } from '../lib/queries-prismic';
 
 import Layout from '../components/Layout';
-import HighlightPost from '../components/HighlightPost';
+import LargePost from '../components/LargePost';
 
-import { Container } from '../styles/pages/Home';
+import { Container, Posts, Post } from '../styles/pages/Home';
 
 interface IPosts {
   posts: IPost[];
@@ -24,7 +24,15 @@ const Home: React.FC<IPosts> = ({ posts }) => {
       </Head>
 
       <Layout>
-        <HighlightPost post={posts[0]} />
+        <LargePost post={posts[0]} />
+        <Posts>
+          {posts.map(post => (
+            <Post color={post.node.color}>
+              <div className="top-side"></div>
+              <div className="bottom-side"></div>
+            </Post>
+          ))}
+        </Posts>
       </Layout>
     </Container>
   );

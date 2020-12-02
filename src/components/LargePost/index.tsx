@@ -2,11 +2,11 @@ import React from 'react';
 
 import { Container } from './styles';
 
-interface IHighlightPost {
+interface ILargePost {
   post: IPost;
 }
 
-const HighlightPost: React.FC<IHighlightPost> = ({ post }) => (
+const LargePost: React.FC<ILargePost> = ({ post }) => (
   <Container color={post.node.color}>
     <div className="left-side">
       <h2>{post.node.title}</h2>
@@ -18,4 +18,4 @@ const HighlightPost: React.FC<IHighlightPost> = ({ post }) => (
   </Container>
 );
 
-export default HighlightPost;
+export default LargePost;
