@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
-
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -18,5 +15,24 @@ export const Container = styled.div`
   p {
     font-size: 24px;
     margin-top: 8px;
+  }
+`;
+
+export const HighlightPost = styled.div`
+  width: 100%;
+  height: 250px;
+
+  position: relative;
+  background: #f38181;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  div.right-side {
+    width: 160px;
+    height: 100%;
+
+    background: #fff;
   }
 `;
