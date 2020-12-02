@@ -6,22 +6,9 @@ import { fetchAPI } from '../lib/api-prismic';
 import { getPosts } from '../lib/queries-prismic';
 
 import Layout from '../components/Layout';
+import HighlightPost from '../components/HighlightPost';
 
-import { Container, HighlightPost } from '../styles/pages/Home';
-
-interface IPost {
-  node: {
-    _meta: { uid: string };
-    title: string;
-    created_at: string;
-    categories: string;
-    thumbnail: {
-      url: string;
-    };
-    color: string;
-    description: { text: string };
-  };
-}
+import { Container } from '../styles/pages/Home';
 
 interface IPosts {
   posts: IPost[];
@@ -37,10 +24,7 @@ const Home: React.FC<IPosts> = ({ posts }) => {
       </Head>
 
       <Layout>
-        <HighlightPost>
-          <div></div>
-          <div className="right-side"></div>
-        </HighlightPost>
+        <HighlightPost post={posts[0]} />
       </Layout>
     </Container>
   );
