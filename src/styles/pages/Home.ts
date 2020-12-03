@@ -32,26 +32,28 @@ export const Posts = styled.div`
 
 export const Post = styled.div<IPost>`
   width: 277px;
-  height: 200px;
 
+  padding: 15px;
+  background: #fff;
   box-shadow: ${({ theme }) => theme.boxShadow};
 
   .top-side {
     width: 100%;
     height: 160px;
 
-    padding: 15px;
-    background: ${({ color }) => color};
+    border-bottom: 3px solid ${({ color }) => color};
 
     h4 {
-      color: #fff;
+      color: ${({ theme }) => theme.colors.text};
+    }
+
+    p {
+      font-size: 15px;
     }
   }
 
   .bottom-side {
     width: 100%;
-    height: 40px;
-
-    background: #fff;
+    height: 30px;
   }
 `;

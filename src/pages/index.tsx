@@ -30,6 +30,7 @@ const Home: React.FC<IPosts> = ({ posts }) => {
             <Post color={post.node.color}>
               <div className="top-side">
                 <h4>{post.node.title}</h4>
+                <p>{post.node.description[0].text}</p>
               </div>
               <div className="bottom-side"></div>
             </Post>
