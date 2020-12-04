@@ -2,11 +2,16 @@ import React from 'react';
 
 import { Container, TabBar } from './styles';
 
+import RightCard from './RightCard';
+
 const Layout: React.FC = ({ children }) => {
   return (
     <Container>
       <div className="content">{children}</div>
-      <TabBar>1</TabBar>
+      <TabBar>
+        <RightCard />
+        <RightCard />
+      </TabBar>
     </Container>
   );
 };

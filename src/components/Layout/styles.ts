@@ -11,15 +11,30 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
 
-  > div.content {
+  > .content {
     max-width: 570px;
     width: 100%;
+  }
+
+  @media (max-width: 915px) {
+    flex-direction: column-reverse;
+
+    > .content {
+      max-width: 660px;
+      margin: 0 auto;
+    }
   }
 `;
 
 export const TabBar = styled.div`
-  max-width: 250px;
+  max-width: 295px;
   width: 100%;
 
-  background: rgba(0, 0, 0, 0.15);
+  @media (max-width: 915px) {
+    margin: 0 auto 30px;
+    max-width: 660px;
+
+    display: flex;
+    align-items: center;
+  }
 `;

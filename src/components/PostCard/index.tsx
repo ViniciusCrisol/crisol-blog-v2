@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import Link from 'next/link';
 
 import { Container } from './styles';
 
@@ -13,16 +14,18 @@ const PostCard: React.FC<IPostCard> = ({ post }: IPostCard) => {
   }, [post]);
 
   return (
-    <Container color={post.node.color} key={post.node._meta.uid}>
-      <div className="top-side">
-        <h4>{post.node.title}</h4>
-        <p>{post.node.description[0].text}</p>
-      </div>
-      <div className="bottom-side">
-        <span>{formattedDate}</span>
-        <span>{post.node.category}</span>
-      </div>
-    </Container>
+    <Link href="/post">
+      <Container color={post.node.color}>
+        <div className="top-side">
+          <h4>{post.node.title}</h4>
+          <p>{post.node.description[0].text}</p>
+        </div>
+        <div className="bottom-side">
+          <span>{formattedDate}</span>
+          <span>{post.node.category}</span>
+        </div>
+      </Container>
+    </Link>
   );
 };
 

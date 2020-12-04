@@ -4,8 +4,9 @@ interface IContainer {
   color: string;
 }
 
-export const Container = styled.div<IContainer>`
+export const Container = styled.a<IContainer>`
   width: 277px;
+  cursor: pointer;
 
   padding: 15px;
   background: #fff;
@@ -35,5 +36,9 @@ export const Container = styled.div<IContainer>`
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  @media (max-width: 915px) {
+    width: 100%;
   }
 `;
