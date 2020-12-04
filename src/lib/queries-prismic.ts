@@ -6,7 +6,7 @@ export const getPosts = `{
         title
         color
         description
-        categories
+        category
         created_at
       }
     }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Head from 'next/head';
 import { GetStaticProps } from 'next';
 
@@ -7,15 +7,20 @@ import { getPosts } from '../lib/queries-prismic';
 
 import Layout from '../components/Layout';
 import LargePost from '../components/LargePost';
+import PostCard from '../components/PostCard';
 
-import { Container, Posts, Post } from '../styles/pages/Home';
+import { Container, Posts } from '../styles/pages/Home';
 
 interface IPosts {
   posts: IPost[];
 }
 
 const Home: React.FC<IPosts> = ({ posts }) => {
-  console.log(posts);
+  const filteredPosts = useMemo(() => {
+    return posts.filter(
+      post => post.node._meta.uid !== posts[0].node._meta.uid
+    );
+  }, [posts]);
 
   return (
     <Container>
@@ -26,14 +31,8 @@ const Home: React.FC<IPosts> = ({ posts }) => {
       <Layout>
         <LargePost post={posts[0]} />
         <Posts>
-          {posts.map(post => (
-            <Post color={post.node.color}>
-              <div className="top-side">
-                <h4>{post.node.title}</h4>
-                <p>{post.node.description[0].text}</p>
-              </div>
-              <div className="bottom-side"></div>
-            </Post>
+          {filteredPosts.map(post => (
+            <PostCard key={post.node._meta.uid} post={post} />
           ))}
         </Posts>
       </Layout>
