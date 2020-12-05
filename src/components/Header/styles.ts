@@ -9,7 +9,6 @@ export const Container = styled.header`
 export const Top = styled.div`
   width: 100%;
   height: 100px;
-
   background: ${({ theme }) => theme.colors.text};
 
   .content {

@@ -1,7 +1,6 @@
 import { AiOutlineGithub, AiOutlineLinkedin } from 'react-icons/ai'
-
-import Logo from '../../assets/logo.svg'
 import { Container, Top, Bottom } from './styles'
+import Logo from '../../assets/logo.svg'
 
 const Header: React.FC = () => (
   <Container>
