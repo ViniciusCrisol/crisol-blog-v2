@@ -4,12 +4,14 @@ import { RichText } from 'prismic-reactjs'
 import { fetchAPI } from '../../lib/api-prismic'
 import { getPost } from '../../lib/queries-prismic'
 
+import { Container } from '../../styles/pages/Post'
+
 interface IPostPage {
   post: IPost
 }
 
 const Post: React.FC<IPostPage> = ({ post }) => {
-  return <div>{RichText.render(post.content)}</div>
+  return <Container>{RichText.render(post.content)}</Container>
 }
 
 export const getStaticProps: GetStaticProps = async ctx => {
