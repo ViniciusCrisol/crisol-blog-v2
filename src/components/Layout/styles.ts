@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.div`
   max-width: 980px;
@@ -24,7 +24,7 @@ export const Container = styled.div`
       margin: 0 auto;
     }
   }
-`;
+`
 
 export const TabBar = styled.div`
   max-width: 295px;
@@ -37,4 +37,4 @@ export const TabBar = styled.div`
     display: flex;
     align-items: center;
   }
-`;
+`

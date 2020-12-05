@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import { darken } from 'polished';
+import styled from 'styled-components'
+import { darken } from 'polished'
 
 export const Container = styled.header`
   width: 100%;
   height: 160px;
-`;
+`
 
 export const Top = styled.div`
   width: 100%;
@@ -63,11 +63,11 @@ export const Top = styled.div`
       }
     }
   }
-`;
+`
 
 export const Bottom = styled.div`
   width: 100%;
   height: 60px;
 
   background: #fff;
-`;
+`

@@ -4,7 +4,7 @@ interface IContainer {
   color: string
 }
 
-export const Container = styled.div<IContainer>`
+export const Container = styled.a<IContainer>`
   width: 100%;
   height: 250px;
 
@@ -15,6 +15,8 @@ export const Container = styled.div<IContainer>`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  cursor: pointer;
 
   div.left-side {
     height: 100%;

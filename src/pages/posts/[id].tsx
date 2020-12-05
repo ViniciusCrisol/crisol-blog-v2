@@ -9,7 +9,6 @@ interface IPostPage {
 }
 
 const Post: React.FC<IPostPage> = ({ post }) => {
-  console.log(post)
   return <div>{RichText.render(post.content)}</div>
 }
 
@@ -19,19 +18,11 @@ export const getStaticProps: GetStaticProps = async ctx => {
     lang: 'pt-br'
   })
 
-  return {
-    props: {
-      post: response.post
-    },
-    revalidate: 60
-  }
+  return { props: { post: response.post }, revalidate: 60 }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [],
-    fallback: true
-  }
+  return { paths: [], fallback: true }
 }
 
 export default Post
