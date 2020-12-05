@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
@@ -16,7 +16,7 @@ export const Container = styled.div`
     font-size: 24px;
     margin-top: 8px;
   }
-`;
+`
 
 export const Posts = styled.div`
   margin-top: 30px;
@@ -24,4 +24,4 @@ export const Posts = styled.div`
   display: grid;
   grid-gap: 16px;
   grid-template-columns: repeat(2, 1fr);
-`;
+`

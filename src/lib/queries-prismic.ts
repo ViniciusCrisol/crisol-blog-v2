@@ -11,4 +11,14 @@ export const getPosts = `{
       }
     }
   }
-}`;
+}`
+
+export const getPost = `
+query($slug: String!, $lang: String!) {
+  post(uid: $slug, lang: $lang) {
+      title
+      content
+      created_at
+      description
+  }
+}`

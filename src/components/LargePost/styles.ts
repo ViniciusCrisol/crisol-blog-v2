@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 interface IContainer {
-  color: string;
+  color: string
 }
 
 export const Container = styled.div<IContainer>`
@@ -58,4 +58,4 @@ export const Container = styled.div<IContainer>`
       justify-content: center;
     }
   }
-`;
+`

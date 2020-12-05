@@ -1,8 +1,5 @@
-import React from 'react';
-
-import { Container, TabBar } from './styles';
-
-import RightCard from './RightCard';
+import RightCard from './RightCard'
+import { Container, TabBar } from './styles'
 
 const Layout: React.FC = ({ children }) => {
   return (
@@ -13,7 +10,7 @@ const Layout: React.FC = ({ children }) => {
         <RightCard />
       </TabBar>
     </Container>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

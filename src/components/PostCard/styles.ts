@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 interface IContainer {
-  color: string;
+  color: string
 }
 
 export const Container = styled.a<IContainer>`
@@ -41,4 +41,4 @@ export const Container = styled.a<IContainer>`
   @media (max-width: 915px) {
     width: 100%;
   }
-`;
+`

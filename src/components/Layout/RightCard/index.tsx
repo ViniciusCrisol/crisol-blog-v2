@@ -1,6 +1,4 @@
-import React from 'react';
-
-import { Container } from './styles';
+import { Container } from './styles'
 
 const RightCard: React.FC = () => (
   <Container>
@@ -8,6 +6,6 @@ const RightCard: React.FC = () => (
       <h2>O que é o crisol ponto dev</h2>
     </div>
   </Container>
-);
+)
 
-export default RightCard;
+export default RightCard

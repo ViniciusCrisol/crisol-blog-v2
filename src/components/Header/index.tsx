@@ -1,9 +1,7 @@
-import React from 'react';
-import { AiOutlineGithub, AiOutlineLinkedin } from 'react-icons/ai';
+import { AiOutlineGithub, AiOutlineLinkedin } from 'react-icons/ai'
 
-import Logo from '../../assets/logo.svg';
-
-import { Container, Top, Bottom } from './styles';
+import Logo from '../../assets/logo.svg'
+import { Container, Top, Bottom } from './styles'
 
 const Header: React.FC = () => {
   return (
@@ -23,7 +21,7 @@ const Header: React.FC = () => {
       </Top>
       <Bottom></Bottom>
     </Container>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

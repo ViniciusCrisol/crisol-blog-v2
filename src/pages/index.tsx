@@ -1,26 +1,24 @@
-import React, { useMemo } from 'react';
-import Head from 'next/head';
-import { GetStaticProps } from 'next';
+import { useMemo } from 'react'
+import { GetStaticProps } from 'next'
+import Head from 'next/head'
 
-import { fetchAPI } from '../lib/api-prismic';
-import { getPosts } from '../lib/queries-prismic';
+import { fetchAPI } from '../lib/api-prismic'
+import { getPosts } from '../lib/queries-prismic'
 
-import Layout from '../components/Layout';
-import LargePost from '../components/LargePost';
-import PostCard from '../components/PostCard';
+import Layout from '../components/Layout'
+import LargePost from '../components/LargePost'
+import PostCard from '../components/PostCard'
 
-import { Container, Posts } from '../styles/pages/Home';
+import { Container, Posts } from '../styles/pages/Home'
 
 interface IPosts {
-  posts: IPost[];
+  posts: IPost[]
 }
 
 const Home: React.FC<IPosts> = ({ posts }) => {
   const filteredPosts = useMemo(() => {
-    return posts.filter(
-      post => post.node._meta.uid !== posts[0].node._meta.uid
-    );
-  }, [posts]);
+    return posts.filter(post => post._meta.uid !== posts[0]._meta.uid)
+  }, [posts])
 
   return (
     <Container>
@@ -32,20 +30,22 @@ const Home: React.FC<IPosts> = ({ posts }) => {
         <LargePost post={posts[0]} />
         <Posts>
           {filteredPosts.map(post => (
-            <PostCard key={post.node._meta.uid} post={post} />
+            <PostCard key={post._meta.uid} post={post} />
           ))}
         </Posts>
       </Layout>
     </Container>
-  );
-};
+  )
+}
 
 export const getStaticProps: GetStaticProps<IPosts> = async () => {
-  const posts = await fetchAPI(getPosts, {});
-  return {
-    props: { posts: posts.allPosts.edges },
-    revalidate: 60,
-  };
-};
+  const response = await fetchAPI(getPosts, {})
+  const posts = response.allPosts.edges.map(post => post.node)
 
-export default Home;
+  return {
+    props: { posts },
+    revalidate: 60
+  }
+}
+
+export default Home
