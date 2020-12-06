@@ -12,29 +12,8 @@ export const Container = styled.div`
   justify-content: space-between;
 
   > .content {
-    max-width: 570px;
+    max-width: 680px;
+    margin: 0 auto;
     width: 100%;
-  }
-
-  @media (max-width: 915px) {
-    flex-direction: column-reverse;
-
-    > .content {
-      max-width: 660px;
-      margin: 0 auto;
-    }
-  }
-`
-
-export const TabBar = styled.div`
-  max-width: 295px;
-  width: 100%;
-
-  @media (max-width: 915px) {
-    margin: 0 auto 30px;
-    max-width: 660px;
-
-    display: flex;
-    align-items: center;
   }
 `

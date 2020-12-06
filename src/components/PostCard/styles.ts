@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.a`
-  width: 277px;
+  width: 100%;
   cursor: pointer;
 
   padding: 15px;
@@ -31,9 +31,5 @@ export const Container = styled.a`
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-
-  @media (max-width: 915px) {
-    width: 100%;
   }
 `

@@ -1,29 +1,24 @@
 import styled from 'styled-components'
 import { darken } from 'polished'
-import { Router } from 'next/router'
 
 export const Container = styled.header`
   width: 100%;
   height: 65px;
 
+  padding: 0 10px;
   background: #fff;
   box-shadow: ${({ theme }) => theme.boxShadow};
 
   .content {
-    max-width: 980px;
+    max-width: 680px;
     width: 100%;
     height: 100%;
 
     margin: 0 auto;
-    padding: 0 10px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    @media (max-width: 915px) {
-      max-width: 660px;
-    }
 
     > a {
       display: flex;
