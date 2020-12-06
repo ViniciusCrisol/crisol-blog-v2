@@ -4,7 +4,6 @@ export const getLastPosts = `{
       node {
         _meta {uid}
         title
-        color
         description
         category
         created_at
@@ -19,7 +18,6 @@ export const getPosts = `{
       node {
         _meta {uid}
         title
-        color
         description
         category
         created_at
@@ -37,3 +35,19 @@ query($slug: String!, $lang: String!) {
       description
   }
 }`
+
+export const getPostByCategory = `
+query($slug: String!) {
+  allPosts(sortBy: created_at_DESC, where: {category: $slug}) {
+    edges {
+      node {
+        _meta {uid}
+        title
+        description
+        category
+        created_at
+      }
+    }
+  }
+}
+`
