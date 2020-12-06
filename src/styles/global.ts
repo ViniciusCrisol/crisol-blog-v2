@@ -18,4 +18,8 @@ export default createGlobalStyle`
     font-family: 'Open Sans', sans-serif;
     color: ${({ theme }) => theme.colors.text};
   }
+
+  a {
+    text-decoration: none;
+  }
 `

@@ -23,10 +23,6 @@ export const Container = styled.header`
     > a {
       display: flex;
       align-items: center;
-
-      svg {
-        height: 35px;
-      }
     }
 
     .links {
@@ -40,10 +36,14 @@ export const Container = styled.header`
         border-radius: 4px;
         background: ${({ theme }) => theme.colors.secondary};
 
+        font-weight: 600;
+        color: ${({ theme }) => darken(0.3, theme.colors.secondary)};
+
         display: flex;
         align-items: center;
         justify-content: center;
 
+        cursor: pointer;
         transition: filter 200ms;
 
         &:hover {
@@ -51,19 +51,9 @@ export const Container = styled.header`
         }
 
         &:first-child {
-          background: ${({ theme }) => theme.colors.tertiary};
           margin-right: 15px;
-
-          svg {
-            fill: ${({ theme }) => darken(0.35, theme.colors.tertiary)};
-          }
-        }
-
-        svg {
-          width: 70%;
-          height: 70%;
-
-          fill: ${({ theme }) => darken(0.3, theme.colors.secondary)};
+          background: ${({ theme }) => theme.colors.tertiary};
+          color: ${({ theme }) => darken(0.35, theme.colors.tertiary)};
         }
       }
     }

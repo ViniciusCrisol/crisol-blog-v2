@@ -1,4 +1,3 @@
-import { AiOutlineGithub, AiOutlineLinkedin } from 'react-icons/ai'
 import Link from 'next/link'
 
 import Logo from '../../assets/logo.svg'
@@ -13,12 +12,10 @@ const Header: React.FC = () => (
         </a>
       </Link>
       <div className="links">
-        <a>
-          <AiOutlineGithub />
-        </a>
-        <a>
-          <AiOutlineLinkedin />
-        </a>
+        <Link href="/posts">
+          <a>Posts</a>
+        </Link>
+        <a>Contato</a>
       </div>
     </div>
   </Container>

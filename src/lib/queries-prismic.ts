@@ -1,3 +1,18 @@
+export const getLastPosts = `{
+  allPosts (sortBy: created_at_DESC, first: 5) {
+    edges {
+      node {
+        _meta {uid}
+        title
+        color
+        description
+        category
+        created_at
+      }
+    }
+  }
+}`
+
 export const getPosts = `{
   allPosts (sortBy: created_at_DESC) {
     edges {

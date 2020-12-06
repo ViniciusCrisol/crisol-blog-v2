@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.a`
   width: 100%;
-  height: 250px;
+  height: 220px;
 
   position: relative;
   background: ${({ theme }) => theme.colors.primary};
@@ -16,7 +16,7 @@ export const Container = styled.a`
 
   div.left-side {
     height: 100%;
-    padding: 25px;
+    padding: 25px 45px;
 
     h2 {
       color: #fff;
@@ -30,7 +30,7 @@ export const Container = styled.a`
   }
 
   div.right-side {
-    width: 140px;
+    width: 155px;
     height: 100%;
 
     padding: 25px 0;

@@ -2,10 +2,10 @@ import styled from 'styled-components'
 
 export const Container = styled.article`
   width: 100%;
-  max-width: 720px;
+  max-width: 680px;
 
   margin: 0 auto;
-  padding: 30px 20px 60px;
+  padding: 60px 10px;
 
   .header {
     margin-bottom: 15px;
