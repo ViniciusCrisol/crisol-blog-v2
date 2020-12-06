@@ -1,5 +1,9 @@
-const withImages = require('next-images');
+const withImages = require('next-images')
 
 module.exports = withImages({
-  esModule: true,
-});
+  esModule: true
+})
+
+module.exports = {
+  trailingSlash: true
+}
