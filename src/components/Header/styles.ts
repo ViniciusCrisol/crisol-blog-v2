@@ -1,15 +1,13 @@
 import styled from 'styled-components'
 import { darken } from 'polished'
+import { Router } from 'next/router'
 
 export const Container = styled.header`
   width: 100%;
-  height: 160px;
-`
+  height: 65px;
 
-export const Top = styled.div`
-  width: 100%;
-  height: 100px;
-  background: ${({ theme }) => theme.colors.text};
+  background: #fff;
+  box-shadow: ${({ theme }) => theme.boxShadow};
 
   .content {
     max-width: 980px;
@@ -23,12 +21,25 @@ export const Top = styled.div`
     align-items: center;
     justify-content: space-between;
 
+    @media (max-width: 915px) {
+      max-width: 660px;
+    }
+
+    > a {
+      display: flex;
+      align-items: center;
+
+      svg {
+        height: 35px;
+      }
+    }
+
     .links {
       display: flex;
       align-items: center;
 
       a {
-        width: 40px;
+        width: 70px;
         height: 40px;
 
         border-radius: 4px;
@@ -41,7 +52,7 @@ export const Top = styled.div`
         transition: filter 200ms;
 
         &:hover {
-          filter: brightness(1.05);
+          filter: brightness(1.03);
         }
 
         &:first-child {
@@ -62,11 +73,4 @@ export const Top = styled.div`
       }
     }
   }
-`
-
-export const Bottom = styled.div`
-  width: 100%;
-  height: 60px;
-
-  background: #fff;
 `

@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { RichText } from 'prismic-reactjs'
 
@@ -11,7 +12,21 @@ interface IPostPage {
 }
 
 const Post: React.FC<IPostPage> = ({ post }) => {
-  return <Container>{RichText.render(post.content)}</Container>
+  if (!post) return <div className="loading" />
+
+  const formattedDate = useMemo(() => {
+    const parsedDate = new Date(post.created_at)
+    return new Intl.DateTimeFormat('pt-BR').format(parsedDate)
+  }, [post])
+
+  return (
+    <Container>
+      <div className="header">
+        <span>Publicado dia: {formattedDate}</span>
+      </div>
+      <div className="main">{RichText.render(post.content)}</div>
+    </Container>
+  )
 }
 
 export const getStaticProps: GetStaticProps = async ctx => {

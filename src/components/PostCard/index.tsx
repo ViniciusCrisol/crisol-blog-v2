@@ -14,8 +14,8 @@ const PostCard: React.FC<IPostCard> = ({ post }: IPostCard) => {
   }, [post])
 
   return (
-    <Link href={`/posts/[id]`} as={`/posts/${post._meta.uid}`}>
-      <Container color={post.color}>
+    <Link href="/posts/[id]" as={`/posts/${post._meta.uid}`}>
+      <Container>
         <div className="top-side">
           <h4>{post.title}</h4>
           <p>{post.description[0].text}</p>

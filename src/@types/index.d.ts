@@ -1,8 +1,7 @@
 interface IPost {
   _meta: { uid: string }
-  content: Array
   title: string
-  color: string
+  content: Array
   created_at: Date
   category: string
   description: { text: string }

@@ -1,15 +1,11 @@
 import styled from 'styled-components'
 
-interface IContainer {
-  color: string
-}
-
-export const Container = styled.a<IContainer>`
+export const Container = styled.a`
   width: 100%;
   height: 250px;
 
   position: relative;
-  background: ${({ color }) => color};
+  background: ${({ theme }) => theme.colors.primary};
   box-shadow: ${({ theme }) => theme.boxShadow};
 
   display: flex;
@@ -49,7 +45,7 @@ export const Container = styled.a<IContainer>`
       width: 80%;
       height: 50px;
 
-      background: ${({ color }) => color};
+      background: ${({ theme }) => theme.colors.primary};
 
       color: #fff;
       font-size: 24px;

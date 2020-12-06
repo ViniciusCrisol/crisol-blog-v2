@@ -7,7 +7,7 @@ interface ILargePost {
 
 const LargePost: React.FC<ILargePost> = ({ post }) => (
   <Link href="/posts/[id]" as={`/posts/${post._meta.uid}`}>
-    <Container color={post.color}>
+    <Container>
       <div className="left-side">
         <h2>{post.title}</h2>
         <p>{post.description[0].text}</p>

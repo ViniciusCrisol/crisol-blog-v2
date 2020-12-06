@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 
-interface IContainer {
-  color: string
-}
-
-export const Container = styled.a<IContainer>`
+export const Container = styled.a`
   width: 277px;
   cursor: pointer;
 
@@ -15,8 +11,7 @@ export const Container = styled.a<IContainer>`
   .top-side {
     width: 100%;
     height: 160px;
-
-    border-bottom: 3px solid ${({ color }) => color};
+    border-bottom: 3px solid ${({ theme }) => theme.colors.secondary};
 
     h4 {
       color: ${({ theme }) => theme.colors.text};

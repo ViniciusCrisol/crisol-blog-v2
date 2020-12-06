@@ -6,6 +6,7 @@ import { fetchAPI } from '../lib/api-prismic'
 import { getPosts } from '../lib/queries-prismic'
 
 import Layout from '../components/Layout'
+import Header from '../components/Header'
 import LargePost from '../components/LargePost'
 import PostCard from '../components/PostCard'
 
