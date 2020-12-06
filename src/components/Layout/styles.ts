@@ -12,7 +12,7 @@ export const Container = styled.div`
   justify-content: space-between;
 
   > .content {
-    max-width: 680px;
+    max-width: 650px;
     margin: 0 auto;
     width: 100%;
   }
