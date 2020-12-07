@@ -5,8 +5,8 @@ export const Container = styled.a`
   height: 220px;
 
   position: relative;
-  background: ${({ theme }) => theme.colors.primary};
   box-shadow: ${({ theme }) => theme.boxShadow};
+  background: #fff;
 
   display: flex;
   align-items: center;
@@ -15,15 +15,13 @@ export const Container = styled.a`
   cursor: pointer;
 
   div.left-side {
-    height: 100%;
-    padding: 25px 45px;
+    height: 80%;
 
-    h2 {
-      color: #fff;
-    }
+    background: #fff;
+    padding: 10px 30px;
+    border-right: 3px solid ${({ theme }) => theme.colors.primary};
 
     p {
-      color: #fff;
       font-size: 16px;
       margin-top: 15px;
     }
