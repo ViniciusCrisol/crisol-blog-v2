@@ -12,6 +12,6 @@ export const Container = styled.div`
 
 export const Posts = styled.div`
   display: grid;
-  grid-gap: 16px;
+  grid-gap: 30px;
   grid-template-columns: 1fr;
 `
