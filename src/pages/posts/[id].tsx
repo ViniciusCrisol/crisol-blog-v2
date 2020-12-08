@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
-import { GetStaticPaths, GetStaticProps } from 'next'
 import { RichText } from 'prismic-reactjs'
+import { GetStaticPaths, GetStaticProps } from 'next'
 
 import { fetchAPI } from '../../lib/api-prismic'
 import { getPost } from '../../lib/queries-prismic'
@@ -11,7 +11,7 @@ interface IPostPage {
   post: IPost
 }
 
-const Post: React.FC<IPostPage> = ({ post }) => {
+const PostPage: React.FC<IPostPage> = ({ post }) => {
   if (!post) return <div className="loading" />
 
   const formattedDate = useMemo(() => {
@@ -29,7 +29,7 @@ const Post: React.FC<IPostPage> = ({ post }) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async ctx => {
+export const getStaticProps: GetStaticProps<IPostPage> = async ctx => {
   const response = await fetchAPI(getPost, {
     slug: ctx.params.id,
     lang: 'pt-br'
@@ -42,4 +42,4 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths: [], fallback: true }
 }
 
-export default Post
+export default PostPage

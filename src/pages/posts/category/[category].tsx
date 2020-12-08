@@ -1,38 +1,48 @@
-import { useMemo } from 'react'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { RichText } from 'prismic-reactjs'
+import Head from 'next/head'
 
 import { fetchAPI } from '../../../lib/api-prismic'
 import { getPostByCategory } from '../../../lib/queries-prismic'
 
-import { Container } from '../../../styles/pages/Posts'
+import Layout from '../../../components/Layout'
+import LargePost from '../../../components/LargePost'
 
-interface IPostPage {
-  post: IPost
+import { Container, Posts } from '../../../styles/pages/Posts'
+
+interface IFilteredPostsPage {
+  posts: IPost[]
 }
 
-const Post: React.FC<IPostPage> = () => {
-  return <h1>...</h1>
+const FilteredPostsPage: React.FC<IFilteredPostsPage> = ({ posts }) => {
+  if (!posts) return <div className="loading" />
+
+  return (
+    <Container>
+      <Head>
+        <title>Home</title>
+      </Head>
+
+      <Layout>
+        <Posts>
+          {posts.map(post => (
+            <LargePost key={post._meta.uid} post={post} />
+          ))}
+        </Posts>
+      </Layout>
+    </Container>
+  )
 }
 
-export const getStaticProps: GetStaticProps = async ctx => {
-  console.log(ctx.params.category)
-  const response = await fetchAPI(getPostByCategory, {
-    slug: ctx.params.category
-  })
+export const getStaticProps: GetStaticProps<IFilteredPostsPage> = async ctx => {
+  const fixedCategory = ctx.params.category.toString().trim().toLowerCase()
+  const response = await fetchAPI(getPostByCategory, { slug: fixedCategory })
 
-  console.log(response)
-
-  // const posts = response.allPosts.edges.map(post => post.node)
-
-  return {
-    props: {},
-    revalidate: 60
-  }
+  const posts = response.allPosts.edges.map(post => post.node)
+  return { props: { posts }, revalidate: 60 }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return { paths: [], fallback: true }
 }
 
-export default Post
+export default FilteredPostsPage

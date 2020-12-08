@@ -1,6 +1,6 @@
+import Head from 'next/head'
 import { useMemo } from 'react'
 import { GetStaticProps } from 'next'
-import Head from 'next/head'
 
 import { fetchAPI } from '../lib/api-prismic'
 import { getLastPosts } from '../lib/queries-prismic'
@@ -11,11 +11,11 @@ import PostCard from '../components/PostCard'
 
 import { Container, Posts } from '../styles/pages/Home'
 
-interface IPosts {
+interface IHomeProps {
   posts: IPost[]
 }
 
-const Home: React.FC<IPosts> = ({ posts }) => {
+const HomePage: React.FC<IHomeProps> = ({ posts }) => {
   const filteredPosts = useMemo(() => {
     return posts.filter(post => post._meta.uid !== posts[0]._meta.uid)
   }, [posts])
@@ -23,7 +23,7 @@ const Home: React.FC<IPosts> = ({ posts }) => {
   return (
     <Container>
       <Head>
-        <title>Home</title>
+        <title>HomePage</title>
       </Head>
 
       <Layout>
@@ -38,14 +38,11 @@ const Home: React.FC<IPosts> = ({ posts }) => {
   )
 }
 
-export const getStaticProps: GetStaticProps<IPosts> = async () => {
+export const getStaticProps: GetStaticProps<IHomeProps> = async () => {
   const response = await fetchAPI(getLastPosts, {})
   const posts = response.allPosts.edges.map(post => post.node)
 
-  return {
-    props: { posts },
-    revalidate: 60
-  }
+  return { props: { posts }, revalidate: 60 }
 }
 
-export default Home
+export default HomePage
