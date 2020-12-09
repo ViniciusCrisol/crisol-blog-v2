@@ -53,3 +53,23 @@ export const Posts = styled.div`
   grid-gap: 30px;
   grid-template-columns: 1fr;
 `
+
+export const NotFound = styled.div`
+  text-align: center;
+
+  h2 {
+    margin: 0 auto;
+    max-width: 445px;
+  }
+
+  span {
+    display: block;
+    margin-top: 15px;
+
+    a {
+      font-weight: 600;
+      text-decoration: underline;
+      color: ${({ theme }) => theme.colors.primary};
+    }
+  }
+`
