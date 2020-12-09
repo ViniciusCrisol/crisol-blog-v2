@@ -36,7 +36,7 @@ query($slug: String!, $lang: String!) {
   }
 }`
 
-export const getPostByCategory = `
+export const getPostsByCategory = `
 query($slug: String!) {
   allPosts(sortBy: created_at_DESC, where: {category: $slug}) {
     edges {

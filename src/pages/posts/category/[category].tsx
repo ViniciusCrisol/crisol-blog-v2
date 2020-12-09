@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 import { fetchAPI } from '../../../lib/api-prismic'
-import { getPostByCategory } from '../../../lib/queries-prismic'
+import { getPostsByCategory } from '../../../lib/queries-prismic'
 
 import Layout from '../../../components/Layout'
 import LargePost from '../../../components/LargePost'
@@ -66,7 +66,7 @@ const FilteredPostsPage: React.FC<IFilteredPostsPage> = ({ posts }) => {
 
 export const getStaticProps: GetStaticProps<IFilteredPostsPage> = async ctx => {
   const fixedCategory = ctx.params.category.toString().trim().toLowerCase()
-  const response = await fetchAPI(getPostByCategory, { slug: fixedCategory })
+  const response = await fetchAPI(getPostsByCategory, { slug: fixedCategory })
 
   const posts = response.allPosts.edges.map(post => post.node)
   return { props: { posts }, revalidate: 60 }
