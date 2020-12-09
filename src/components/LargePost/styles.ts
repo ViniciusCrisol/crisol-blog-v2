@@ -54,4 +54,37 @@ export const Container = styled.a`
       justify-content: center;
     }
   }
+
+  @media (max-width: 600px) {
+    min-height: 220px;
+    height: unset;
+
+    padding: 20px;
+    justify-content: center;
+    flex-direction: column-reverse;
+
+    div.left-side {
+      padding: 15px 0 0;
+      border-right: 0;
+    }
+
+    div.right-side {
+      width: 100%;
+      height: unset;
+
+      padding: unset;
+      padding-bottom: 15px;
+      border-bottom: 3px solid ${({ theme }) => theme.colors.primary};
+
+      flex-direction: row;
+
+      div.tag {
+        height: 40px;
+        width: min-content;
+
+        background: none;
+        color: ${({ theme }) => theme.colors.primary};
+      }
+    }
+  }
 `
