@@ -1,9 +1,13 @@
 import { useMemo } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { RichText } from 'prismic-reactjs'
 import { GetStaticPaths, GetStaticProps } from 'next'
 
 import { fetchAPI } from '../../lib/api-prismic'
 import { getPost } from '../../lib/queries-prismic'
+
+import NothingFound from '../../components/NothingFound'
 
 import { Container } from '../../styles/pages/Post'
 
@@ -12,7 +16,28 @@ interface IPostPage {
 }
 
 const PostPage: React.FC<IPostPage> = ({ post }) => {
-  if (!post) return <div className="loading" />
+  const Router = useRouter()
+
+  const postId = useMemo(() => {
+    return Router.query.id
+  }, [Router])
+
+  if (post === undefined) return <div className="loading" />
+
+  if (post === null)
+    return (
+      <NothingFound>
+        <h2>
+          Não foi possível encontrar nenhum post com o id {` "${postId}"`}
+        </h2>
+        <span>
+          Retorne à página de posts clicando{' '}
+          <Link href="/posts">
+            <a>aqui</a>
+          </Link>
+        </span>
+      </NothingFound>
+    )
 
   const formattedDate = useMemo(() => {
     const parsedDate = new Date(post.created_at)

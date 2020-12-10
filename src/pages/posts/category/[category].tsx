@@ -8,8 +8,9 @@ import { getPostsByCategory } from '../../../lib/queries-prismic'
 
 import Layout from '../../../components/Layout'
 import LargePost from '../../../components/LargePost'
+import NothingFound from '../../../components/NothingFound'
 
-import { Container, Posts, NotFound } from '../../../styles/pages/Posts'
+import { Container, Posts } from '../../../styles/pages/Posts'
 import { useMemo } from 'react'
 
 interface IFilteredPostsPage {
@@ -23,30 +24,24 @@ const FilteredPostsPage: React.FC<IFilteredPostsPage> = ({ posts }) => {
     return Router.query.category
   }, [Router])
 
-  console.log(category)
-
   if (posts === undefined) return <div className="loading" />
 
   if (posts.length === 0) {
     return (
-      <Container>
-        <Layout>
-          <NotFound>
-            <h2>
-              Não foi possível encontrar nenhum post relacionado à
-              {` "${category}"`}
-            </h2>
-            <span>
-              Retorne à página de posts clicando{' '}
-              <Link href="/posts">
-                <a>aqui</a>
-              </Link>
-            </span>
-          </NotFound>
-        </Layout>
-      </Container>
+      <NothingFound>
+        <h2>
+          Não foi possível encontrar nenhum post relacionado à{` "${category}"`}
+        </h2>
+        <span>
+          Retorne à página de posts clicando{' '}
+          <Link href="/posts">
+            <a>aqui</a>
+          </Link>
+        </span>
+      </NothingFound>
     )
   }
+
   return (
     <Container>
       <Head>
