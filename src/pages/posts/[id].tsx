@@ -24,7 +24,7 @@ const PostPage: React.FC<IPostPage> = ({ post }) => {
 
   if (post === undefined) return <div className="loading" />
 
-  if (post === null)
+  if (post === null) {
     return (
       <NothingFound>
         <h2>
@@ -38,6 +38,7 @@ const PostPage: React.FC<IPostPage> = ({ post }) => {
         </span>
       </NothingFound>
     )
+  }
 
   const formattedDate = useMemo(() => {
     const parsedDate = new Date(post.created_at)
