@@ -12,4 +12,5 @@ const Page404: React.FC = () => (
     </span>
   </NothingFound>
 )
+
 export default Page404
