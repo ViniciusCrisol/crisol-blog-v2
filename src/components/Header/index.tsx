@@ -15,7 +15,9 @@ const Header: React.FC = () => (
         <Link href="/posts">
           <a>Posts</a>
         </Link>
-        <a>Contato</a>
+        <Link href="/contact">
+          <a>Contato</a>
+        </Link>
       </div>
     </div>
   </Container>
