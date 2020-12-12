@@ -36,7 +36,13 @@ const PostsPage: React.FC<IPostsPage> = ({ posts }) => {
   return (
     <Container>
       <Head>
-        <title>PostsPage</title>
+        <title>Crisol Ponto Dev - Busque por posts.</title>
+        <meta
+          name="description"
+          content="Aqui você encontrará artigos com os
+        mais diversos temas, sendo a maior parte deles orientados a um público
+        iniciante/intermediário."
+        />
       </Head>
 
       <Layout>

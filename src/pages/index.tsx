@@ -1,5 +1,5 @@
-import Head from 'next/head'
 import { useMemo } from 'react'
+import Head from 'next/head'
 import { GetStaticProps } from 'next'
 
 import { fetchAPI } from '../lib/api-prismic'
@@ -23,7 +23,16 @@ const HomePage: React.FC<IHomeProps> = ({ posts }) => {
   return (
     <Container>
       <Head>
-        <title>HomePage</title>
+        <title>
+          Crisol Ponto Dev - Artigos relacionados ao mundo da programação.
+        </title>
+        <meta
+          name="description"
+          content="Este blog tem o objetivo de transmitir um pouco de conhecimento
+        relacionado ao mundo da programação, aqui você encontrará artigos com os
+        mais diversos temas, sendo a maior parte deles orientados a um público
+        iniciante/intermediário."
+        />
       </Head>
 
       <Layout>

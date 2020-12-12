@@ -1,11 +1,22 @@
+import Head from 'next/head'
+
 import Layout from '../components/Layout'
-
 import { Container } from '../styles/pages/Contact'
-
 const linkedinLink = 'https://linkedin.com/in/viníciuscrisol'
 
 const Contact: React.FC = () => (
   <Layout>
+    <Head>
+      <title>Crisol Ponto Dev - Entre em contato.</title>
+      <meta
+        name="description"
+        content=" Este blog tem o objetivo de transmitir um pouco de conhecimento
+        relacionado ao mundo da programação, aqui você encontrará artigos com os
+        mais diversos temas, sendo a maior parte deles orientados a um público
+        iniciante/intermediário. Caso tenha interesse em contribuir, entre em conatato."
+      />
+    </Head>
+
     <Container>
       <h2>Sobre nós:</h2>
       <p>

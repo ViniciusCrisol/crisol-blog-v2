@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import Link from 'next/link'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { RichText } from 'prismic-reactjs'
 import { GetStaticPaths, GetStaticProps } from 'next'
@@ -18,15 +19,25 @@ interface IPostPage {
 const PostPage: React.FC<IPostPage> = ({ post }) => {
   const Router = useRouter()
 
+  if (post === undefined) return <div className="loading" />
+
   const postId = useMemo(() => {
     return Router.query.id
   }, [Router])
 
-  if (post === undefined) return <div className="loading" />
-
   if (post === null) {
     return (
       <NothingFound>
+        <Head>
+          <title>Crisol Ponto Dev - Nada encontrado.</title>
+          <meta
+            name="description"
+            content="Este blog tem o objetivo de transmitir um pouco de conhecimento
+        relacionado ao mundo da programação, aqui você encontrará artigos com os
+        mais diversos temas, sendo a maior parte deles orientados a um público
+        iniciante/intermediário."
+          />
+        </Head>
         <h2>
           Não foi possível encontrar nenhum post com o id {` "${postId}"`}
         </h2>
@@ -47,6 +58,10 @@ const PostPage: React.FC<IPostPage> = ({ post }) => {
 
   return (
     <Container>
+      <Head>
+        <title>{post.title}</title>
+        <meta name="description" content={post.description[0].text} />
+      </Head>
       <div className="header">
         <span>Publicado dia: {formattedDate}</span>
       </div>
