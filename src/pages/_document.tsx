@@ -56,7 +56,7 @@ export default class MyDocument extends Document {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${process.env.GA_TRACKING_ID}', {
-              page_path: window.location.pathname,
+              page_path: window.location.pathname
             });
           `
             }}
