@@ -32,4 +32,16 @@ export const Container = styled.a`
     align-items: center;
     justify-content: space-between;
   }
+
+  @media (max-width: 600px) {
+    .top-side {
+      min-height: 100px;
+      height: fit-content;
+      padding-bottom: 10px;
+
+      h4 {
+        margin-bottom: 10px;
+      }
+    }
+  }
 `
