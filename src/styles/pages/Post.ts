@@ -29,6 +29,11 @@ export const Container = styled.article`
       & + p {
         margin-top: 5px;
       }
+
+      a {
+        text-decoration: underline;
+        color: ${({ theme }) => theme.colors.secondary};
+      }
     }
 
     pre {
