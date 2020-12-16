@@ -32,7 +32,7 @@ export const Container = styled.article`
 
       a {
         text-decoration: underline;
-        color: ${({ theme }) => theme.colors.secondary};
+        color: ${({ theme }) => theme.colors.primary};
       }
     }
 
